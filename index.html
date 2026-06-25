@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COOCAA INDIA // OVERDRIVE RECOVERY & HYPER-GROWTH PITCH</title>
+    <style>
+        :root {
+            --neon-orange: #FF5500;
+            --neon-glow-orange: rgba(255, 85, 0, 0.85);
+            --cyber-dark: #070709;
+            --electric-blue: #00E5FF;
+            --electric-blue-glow: rgba(0, 229, 255, 0.4);
+            --pure-white: #FFFFFF;
+            --glass-card: rgba(255, 255, 255, 0.92);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --bento-shadow: 0 30px 70px rgba(0, 0, 0, 0.08);
+            --brutalist-border: 5px solid #070709;
+            --card-radius: 32px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            background-color: #ECEFF2;
+            color: var(--cyber-dark);
+            overflow-x: hidden;
+            position: relative;
+            padding: 80px 24px;
+        }
+
+        /* Pure CSS Extreme Dynamic Liquid Canvas Overlay */
+        .cyber-bg-ambient {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -2;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 50%, #F4F7F9 0%, #DFE4E8 100%);
+        }
+
+        .kinetic-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.22;
+            animation: pulseOrganic 12s infinite ease-in-out;
+        }
+
+        .blob-orange {
+            top: -15%; right: -15%;
+            width: 900px; height: 900px;
+            background: var(--neon-orange);
+            animation-duration: 10s;
+        }
+
+        .blob-blue {
+            bottom: -25%; left: -15%;
+            width: 800px; height: 800px;
+            background: var(--electric-blue);
+            animation-duration: 16s;
+            animation-direction: reverse;
+        }
+
+        @keyframes pulseOrganic {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            33% { transform: translate(80px, -60px) scale(1.15) rotate(120deg); }
+            66% { transform: translate(-60px, 70px) scale(0.9) rotate(240deg); }
+            100% { transform: translate(0, 0) scale(1) rotate(360deg); }
+        }
+
+        @keyframes textGlowGlitch {
+            0%, 100% { text-shadow: 4px 4px 0px var(--electric-blue), -2px -2px 0px var(--neon-orange); }
+            50% { text-shadow: -3px 4px 0px var(--neon-orange), 3px -2px 0px var(--electric-blue); }
+        }
+
+        @keyframes lineRun {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes scalePulse {
+            0%, 100% { transform: scale(1); border-color: var(--glass-border); }
+            50% { transform: scale(1.01); border-color: var(--neon-orange); box-shadow: 0 0 30px var(--neon-glow-orange); }
+        }
+
+        /* Layout Foundations */
+        .pitch-wrapper {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 90px;
+            position: relative;
+        }
+
+        .brand-pill {
+            background: var(--cyber-dark);
+            color: var(--pure-white);
+            padding: 14px 32px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 8px;
+            display: inline-block;
+            margin-bottom: 30px;
+            border: 2px solid rgba(255,255,255,0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* CHINESE FIRST PRIORITY TYPOGRAPHY OVERHAUL */
+        h1 {
+            font-size: 68px;
+            font-weight: 950;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            color: var(--cyber-dark);
+            animation: textGlowGlitch 3.5s infinite ease-in-out;
+            margin-bottom: 15px;
+        }
+
+        .subtitle-en {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--muted-gray);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Brutalist Section Splitters */
+        .mega-title {
+            font-size: 56px;
+            font-weight: 950;
+            color: var(--cyber-dark);
+            margin-bottom: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+            position: relative;
+        }
+
+        .mega-title::after {
+            content: "";
+            width: 100%;
+            height: 5px;
+            background: var(--cyber-dark);
+            margin-top: 15px;
+        }
+
+        .mega-title.accent-mode {
+            color: var(--neon-orange);
+        }
+        .mega-title.accent-mode::after {
+            background: var(--neon-orange);
+        }
+
+        .title-en-sub {
+            font-size: 14px;
+            background: var(--cyber-dark);
+            color: var(--pure-white);
+            padding: 4px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        .mega-title.accent-mode .title-en-sub {
+            background: var(--neon-orange);
+        }
+
+        /* Bento Grid Architecture */
+        .bento-layout {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 35px;
+            margin-bottom: 70px;
+        }
+
+        .span-12 { grid-column: span 12; }
+        .span-8 { grid-column: span 8; }
+        .span-6 { grid-column: span 6; }
+        .span-4 { grid-column: span 4; }
+
+        @media (max-width: 1024px) {
+            .span-8, .span-6, .span-4 { grid-column: span 12; }
+            h1 { font-size: 48px; }
+            .mega-title { font-size: 42px; }
+        }
+
+        .creative-card {
+            background: var(--glass-card);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 2px solid var(--glass-border);
+            border-radius: var(--card-radius);
+            padding: 45px;
+            box-shadow: var(--bento-shadow);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .creative-card:hover {
+            transform: translateY(-10px) scale(1.01);
+            box-shadow: 0 40px 80px rgba(255, 85, 0, 0.15), var(--neon-glow-orange);
+            border-color: var(--neon-orange);
+        }
+
+        /* Specific Heavy Visual Enhancements */
+        .ban-globe-alert {
+            background: linear-gradient(135deg, #09090D 0%, #1A1A24 100%);
+            color: var(--pure-white);
+            border-radius: var(--card-radius);
+            padding: 50px;
+            margin-bottom: 50px;
+            border: var(--brutalist-border);
+            box-shadow: 12px 12px 0px var(--cyber-dark);
+            position: relative;
+        }
+
+        .ban-countries-cluster {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .country-tag {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            color: var(--pure-white);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+        }
+
+        .country-tag.highlight-orange {
+            background: var(--neon-orange);
+            border-color: var(--neon-orange);
+            box-shadow: 0 0 20px var(--neon-glow-orange);
+            animation: scalePulse 3s infinite ease-in-out;
+        }
+
+        /* Bilingual Hierarchy Swapping Rule */
+        .lang-block-zh { font-size: 20px; font-weight: 800; color: var(--cyber-dark); display: block; line-height: 1.4; }
+        .lang-block-en { font-size: 13px; color: var(--muted-gray); font-weight: 600; display: block; margin-top: 6px; line-height: 1.5; text-transform: none; }
+        .ban-globe-alert .lang-block-zh { color: var(--pure-white); }
+        .ban-globe-alert .lang-block-en { color: #A0A0AF; }
+
+        /* Smartphone Mockup Frame Layout Engine (9:16 Core Constraints) */
+        .reels-9-16-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .smartphone-wrap-9-16 {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            background: #0D0D11;
+            border-radius: 36px;
+            border: 8px solid var(--cyber-dark);
+            box-shadow: 0 25px 55px rgba(0,0,0,0.18);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .smartphone-wrap-9-16:hover {
+            border-color: var(--neon-orange);
+            box-shadow: 0 35px 70px var(--neon-glow-orange);
+            transform: translateY(-5px) scale(1.03);
+        }
+
+        .smartphone-wrap-9-16 img {
+            width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;
+            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .smartphone-wrap-9-16:hover img {
+            transform: scale(1.06);
+        }
+
+        .smartphone-glare-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 60%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .smartphone-label-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(0deg, rgba(7,7,9,0.98) 0%, rgba(7,7,9,0.65) 75%, rgba(0,0,0,0) 100%);
+            padding: 25px 20px;
+            color: var(--pure-white);
+            z-index: 3;
+        }
+
+        .smartphone-label-overlay .label-main {
+            font-size: 16px; font-weight: 900; color: var(--neon-orange); text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        .smartphone-label-overlay .label-metrics {
+            font-size: 12px; color: var(--electric-blue); font-weight: 800; margin-top: 4px;
+        }
+
+        /* Core Section Tag */
+        .section-tag {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--neon-orange);
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* Calendar Matrix Block */
+        .calendar-strip {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        @media (max-width: 600px) { .calendar-strip { grid-template-columns: repeat(4, 1fr); } }
+
+        .calendar-day-node {
+            background: rgba(0,0,0,0.04);
+            border: 2px dashed rgba(0,0,0,0.1);
+            border-radius: 16px;
+            padding: 16px 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .calendar-day-node.post-fresh { background: rgba(255, 85, 0, 0.12); border-color: var(--neon-orange); box-shadow: 0 5px 15px rgba(255,85,0,0.05); }
+        .calendar-day-node.post-recycled { background: rgba(0, 229, 255, 0.08); border-color: var(--electric-blue); box-shadow: 0 5px 15px rgba(0,229,255,0.05); }
+
+        .day-lbl { font-size: 12px; font-weight: 900; text-transform: uppercase; color: var(--muted-gray); }
+        .day-act { font-size: 13px; font-weight: 950; margin-top: 6px; }
+
+        /* Performance Data Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            font-size: 14px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.01);
+        }
+
+        th {
+            background-color: var(--cyber-dark);
+            color: var(--pure-white);
+            padding: 18px;
+            font-weight: 950;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+        }
+
+        td {
+            padding: 18px;
+            border-bottom: 2px solid rgba(0,0,0,0.04);
+            font-weight: 700;
+        }
+
+        tr:last-child td {
+            font-weight: 950;
+            background-color: rgba(255, 85, 0, 0.08);
+            color: var(--neon-orange);
+            border-bottom: none;
+        }
+
+        /* Large Data Display Highlighters */
+        .stat-massive-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 550px) { .stat-massive-grid { grid-template-columns: 1fr; } }
+
+        .metric-big-box {
+            background: rgba(0,0,0,0.03);
+            padding: 24px;
+            border-radius: 20px;
+            border-left: 5px solid var(--cyber-dark);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.01);
+        }
+
+        .metric-big-box.orange-flavor { border-left-color: var(--neon-orange); }
+
+        .num-callout {
+            font-size: 42px;
+            font-weight: 950;
+            letter-spacing: -1px;
+            line-height: 1;
+            color: var(--cyber-dark);
+        }
+        .orange-flavor .num-callout { color: var(--neon-orange); text-shadow: 0 0 15px rgba(255,85,0,0.1); }
+
+        .num-lbl-zh { font-size: 14px; font-weight: 800; margin-top: 6px; display: block; color: var(--cyber-dark); }
+        .num-lbl-en { font-size: 11px; color: var(--muted-gray); display: block; margin-top: 2px; text-transform: uppercase; font-weight: 600; }
+
+        /* Philosophical Closing Accent Footer */
+        .philosophical-footer {
+            text-align: center;
+            padding: 70px 45px;
+            background: var(--cyber-dark);
+            color: var(--pure-white);
+            border-radius: var(--card-radius);
+            margin-top: 90px;
+            border: var(--brutalist-border);
+            box-shadow: 15px 15px 0px var(--neon-orange);
+        }
+
+        .quote-zh {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--neon-orange);
+            line-height: 1.4;
+            text-shadow: 0 0 20px rgba(255,85,0,0.2);
+        }
+
+        .quote-en {
+            font-size: 15px;
+            font-weight: 600;
+            color: #A0A0AF;
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .sys-info {
+            font-size: 11px;
+            color: #555560;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 45px;
+            font-weight: 700;
+        }
+
+        .cyber-bar::after {
+            content: "";
+            position: absolute;
+            top: 0; bottom: 0; width: 40%;
+            background: linear-gradient(90deg, var(--electric-blue), var(--neon-orange));
+            border-radius: 100px;
+            animation: lineRun 2.5s infinite linear;
+        }
+
+        .badge-pill {
+            background: rgba(255, 85, 0, 0.1);
+            color: var(--neon-orange);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 800;
+            display: inline-block;
+            border: 1px solid rgba(255, 85, 0, 0.15);
+        }
+
+        .gallery-split-header {
+            font-size: 18px;
+            font-weight: 950;
+            color: var(--cyber-dark);
+            margin-top: 35px;
+            border-bottom: 3px solid var(--cyber-dark);
+            padding-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dynamic Flow Background Matrix -->
+    <div class="cyber-bg-ambient">
+        <div class="kinetic-blob blob-orange"></div>
+        <div class="kinetic-blob blob-blue"></div>
+    </div>
+
+    <div class="pitch-wrapper">
+        <!-- Main Pitch Heading Section -->
+        <header>
+            <div class="brand-pill">⚡ COOCAA REGIONAL ENGINEERING &amp; MEDIA LAB</div>
+            <h1>酷开印度账号封禁事件解构与重组增长战略</h1>
+            <div class="subtitle-en">The Overdrive Strategic Reset // Coocaa India</div>
+            <div class="cyber-bar"></div>
+        </header>
+
+        <!-- STEP 1: THE BAN BANNER -->
+        <div class="mega-title accent-mode">01 // 突发区域主页封禁事实事实 <span class="title-en-sub">The Ban Incident Timeline</span></div>
+        <section class="ban-globe-alert">
+            <span class="lang-block-zh" style="font-size: 24px; color: var(--neon-orange); font-weight: 950;">⚠️ 紧急风控态势通报 / Immediate Threat Matrix Realized:</span>
+            <p class="lang-block-zh" style="margin-top: 15px; font-size: 17px; line-height: 1.6;">
+                近期，我方 <strong>Coocaa India</strong> 官方商用账号突遭平台强制关停。经过底层链路追溯发现，此项风控并非孤立个案；Meta 自动化合规审查系统在同一周期内发动了全局清剿，连续切断了包括<strong>菲律宾 (Coocaa Philippines)</strong> 与<strong>俄罗斯 (Coocaa Russia)</strong> 在内的多个关键海外区域官方矩阵主页。
+            </p>
+            <p class="lang-block-en" style="margin-top: 10px;">
+                Recently, our official <strong>Coocaa India</strong> Instagram corporate page was abruptly restricted and suspended. This was not an isolated incident; Meta automated compliance system runs executed simultaneous account bans on other strategic regional channels, including <strong>Coocaa Philippines</strong> and <strong>Coocaa Russia</strong>.
+            </p>
+            <div class="ban-countries-cluster">
+                <div class="country-tag highlight-orange">🇮🇳 Coocaa India (已封禁 / SUSPENDED)</div>
+                <div class="country-tag">🇵🇭 Coocaa Philippines (受波及 / AFFECTED)</div>
+                <div class="country-tag">🇷🇺 Coocaa Russia (受波及 / AFFECTED)</div>
+            </div>
+        </section>
+
+        <!-- STEP 2: WHY? -->
+        <div class="mega-title">02 // 核心根因判读分析 <span class="title-en-sub">Why? Core Vectors Identified</span></div>
+        <div class="bento-layout">
+            <div class="creative-card span-6">
+                <span class="badge-pill">维度 A // 竞品恶意网络围猎</span>
+                <h3 style="margin-top:15px; font-size:22px; font-weight:950;">恶意黑公关虚假举报攻击</h3>
+                <span class="lang-block-en" style="margin-top:2px;">Malicious Competitor Reporting Attack</span>
+                <p class="lang-block-zh" style="margin-top:15px; font-size:15px; color:#333;">
+                    外部竞争对手或有组织的恶意实体利用了平台的合规漏洞，向审查中心发起了高密度、规模化的虚假侵权举报（欺诈性指控我方为“虚假冒充账号”），强行触发了系统的自动化熔断封禁机制。
+                </p>
+                <p class="lang-block-en" style="margin-top:8px; color:var(--muted-gray);">
+                    External corporate entities or organized competitors filed coordinated fraudulent infringement claims ("Fake Account" flags) to sabotage our marketing momentum.
+                </p>
+            </div>
+            <div class="creative-card span-6">
+                <span class="badge-pill">维度 B // 算法主体判定发生冲突</span>
+                <h3 style="margin-top:15px; font-size:22px; font-weight:950;">系统全局反仿冒指纹误判</h3>
+                <span class="lang-block-en" style="margin-top:2px;">Automated Identity Impersonation Sweep</span>
+                <p class="lang-block-zh" style="margin-top:15px; font-size:15px; color:#333;">
+                    Meta 平台近期升级了全局多重账号去重过滤算法，在交叉比对过程中，误将我方局部区域独立运营的营销账号，判定为正在恶意假冒或蚕食 <strong>Coocaa Global</strong> 全球总部的非授权仿冒主体。
+                </p>
+                <p class="lang-block-en" style="margin-top:8px; color:var(--muted-gray);">
+                    Meta's global duplication scan modules interpreted our unique localized regional marketing handle as an unauthorized entity trying to impersonate Coocaa Global.
+                </p>
+            </div>
+        </div>
+
+        <!-- STEP 3: WHAT TO DO NOW? REBUILD! -->
+        <div class="mega-title accent-mode">03 // 战略抉择：破釜沉舟，全面重组！ <span class="title-en-sub">What to do now? Rebuild!</span></div>
+        <section class="creative-card" style="margin-bottom:6px; border-left:6px solid var(--neon-orange);">
+            <span class="lang-block-zh" style="font-size:24px; font-weight:950;">矩阵资产直接再生方案：跳出被动申诉泥潭</span>
+            <p class="lang-block-zh" style="margin-top:12px; font-size:16px; color: #111; line-height: 1.6;">
+                根据过往工程经验，Meta 内部针对商业主页的申诉管道极其机械僵硬、严重依赖非人工算法流，复审通过率微乎其微且伴随不可控的时间成本。将一线营销阵地停滞并盲目押注在历史死号的申诉上，等同于主动放弃海外市场话语权。团队决断彻底启动 <strong>Fresh Start Protocol（全新矩阵主页激活方案）</strong>，立刻依托现有清洁备用资产进行无缝重组重建。
+            </p>
+            <p class="lang-block-en" style="margin-top:8px; color:var(--muted-gray);">
+                Legacy account recovery processes inside Meta are historically rigid, algorithm-driven, and provide single-digit chances of operational turnaround. Relying on support timelines paralyzes our market communication. We must execute a calculated, aggressive Fresh Start Protocol. We rebuild immediately on our clean backup assets.
+            </p>
+        </section>
+
+        <!-- STEP 4: FIRST STEP, PROTECTION -->
+        <div class="bento-layout" style="margin-top:40px;">
+            <div class="creative-card span-12">
+                <span class="section-tag">First Layer Security</span>
+                <h2>第一步：底层资产确权与防御加固防御加固 <span class="title-en-sub">The First Step: Absolute Brand Protection</span></h2>
+                <p class="lang-block-zh" style="margin-bottom:20px; font-size:16px; color:#333;">
+                    为确保新部署的数字资产能够永久免疫二次风控清剿，团队已全面升级底层防护架构，铸造四重安全锁：
+                </p>
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:25px;">
+                    <div style="background:rgba(0,0,0,0.03); padding:24px; border-radius:16px;">
+                        <strong class="lang-block-zh" style="font-size:16px;">🔗 全球官方主页双向交叉反链认证</strong>
+                        <span class="lang-block-en">Global Reciprocal Linkage</span>
+                        <p style="font-size:12px; color:#555; margin-top:6px;">将新主页与 Coocaa Global 全球官方 profiles 及海外网域入口直接进行双向友情链接锚定，在算法层面确立直属血统。</p>
+                    </div>
+                    <div style="background:rgba(0,0,0,0.03); padding:24px; border-radius:16px;">
+                        <strong class="lang-block-zh" style="font-size:16px;">🌐 官方唯一企业域名邮箱强制绑定</strong>
+                        <span class="lang-block-en">Domain Integration</span>
+                        <p style="font-size:12px; color:#555; margin-top:6px;">清理所有非官方代建账户，主页全局强制配置公示企业专属网域电子邮箱及经过核验的商业安全域名。</p>
+                    </div>
+                    <div style="background:rgba(0,0,0,0.03); padding:24px; border-radius:16px;">
+                        <strong class="text-en">🛡️ 本地合规法务资质资产包封包提交</strong>
+                        <span class="lang-block-en">Meta Verification Architecture</span>
+                        <p style="font-size:12px; color:#555; margin-top:6px;">向 Meta 广告资产管理中心完整提报本地注册合规商标证书图谱与 GST 税务实体证明，封堵任意冒充流言。</p>
+                    </div>
+                    <div style="background:rgba(255,85,0,0.06); border:2px solid var(--neon-orange); padding:24px; border-radius:16px;">
+                        <strong class="lang-block-zh" style="font-size:16px; color:var(--neon-orange);">⚡ 闪击绿色通道：企业级 Meta Verified 即刻强开</strong>
+                        <span class="lang-block-en" style="color:var(--cyber-dark);">Fast-Track Instant Protection</span>
+                        <p style="font-size:12px; color:#111; margin-top:6px; font-weight:600;">在常规免费企业认证排队等待期间，直接启动企业级付费 Meta Verified 通道（正式申请开销约为 <strong>办公费用 ₹679 INR / 月，约合 ¥48 RMB / 月</strong>），实现上线即刻加V蓝标认证，以官方认证金身彻底阻断任何恶意仿冒举报。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 5: PLAN -->
+        <div class="mega-title">04 // 破局增长战略规划 <span class="title-en-sub">The Growth Plan &amp; Scale Objectives</span></div>
+        <div class="bento-layout">
+            <div class="creative-card span-4">
+                <span class="section-tag">Loss Audit</span>
+                <h2>旧主页历史沉淀损失核算 <span class="title-en-sub">The Lost Baselines</span></h2>
+                <div class="stat-massive-grid" style="grid-template-columns:1fr; gap:15px; margin-top:25px;">
+                    <div class="metric-big-box">
+                        <div class="num-callout">~7,500</div>
+                        <span class="num-lbl-zh">流失粉丝数据资产 base</span>
+                        <span class="num-lbl-en">Followers Lost</span>
+                    </div>
+                    <div class="metric-big-box">
+                        <div class="num-callout">数十万级</div>
+                        <span class="num-lbl-zh">流失历史累积互动活跃池</span>
+                        <span class="num-lbl-en">Lakhs of Engagement Base</span>
+                    </div>
+                </div>
+            </div>
+            <div class="creative-card span-8">
+                <span class="section-tag">Strategic Paradigm Shift</span>
+                <h2>放弃无效低质粉丝，聚焦强互动体系化扩容 <span class="title-en-sub">Controlled &amp; Organised Scalability</span></h2>
+                <p class="lang-block-zh" style="margin-top:15px; font-size:16px; line-height:1.6;">
+                    核心运营转型：新阶段团队彻底拒绝盲目追求低客单价泛娱乐的无留存粉丝。全新增长模型将全面锚定**高互动黏性矩阵**、以及**高度纪律性的媒体排期节奏**。我们的战略核心是在可控的周期内，高效沉淀真正具有转化潜力的品牌价值资产流。
+                </p>
+                <p class="lang-block-en" style="margin-top:8px; color:var(--muted-gray);">
+                    Our tactical objective is no longer simple organic follower recovery. We refuse to chase low-intent volume. The new operations sequence maps directly to High-Engagement Matrices and predictable follower growth curves to build premium brand sentiment.
+                </p>
+                <div class="stat-massive-grid" style="margin-top:25px;">
+                    <div class="metric-big-box orange-flavor">
+                        <div class="num-callout">10,000+</div>
+                        <span class="num-lbl-zh">战略首发总目标粉丝基数</span>
+                        <span class="num-lbl-en">Primary Target Objective</span>
+                    </div>
+                    <div class="metric-big-box">
+                        <div class="num-callout">1-3 个月</div>
+                        <span class="num-lbl-zh">集团高层弹性交付窗口期</span>
+                        <span class="num-lbl-en">Flexible Delivery Window</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 6: UPLOADS -->
+        <div class="mega-title accent-mode">05 // 六月内容工业级量产排期规划 <span class="title-en-sub">Uploads Matrix &amp; Content Velocity</span></div>
+        <div class="bento-layout">
+            <div class="creative-card span-12">
+                <span class="section-tag">Operational Schedule</span>
+                <h2>双轨推进精细化排期：每日高频更新机制 <span class="title-en-sub">Velocity Engineering Matrix: June Campaign</span></h2>
+                <p class="lang-block-zh" style="font-size:16px; margin-bottom:15px; line-height:1.6;">
+                    全月通过 **8-10 篇全新首发高品质创意资产**（精准覆盖本地重大节日热点、新主题系列视频）与 **10-12 篇历史爆款资产精细化重制版**进行双轨交替发布。这一高频轮转算法模型能让新主页在不超载产能的前提下，几乎达成每日更新，全面拉高平台系统初始推荐权重。
+                </p>
+                <p class="lang-block-en" style="color:var(--muted-gray); margin-bottom:25px;">
+                    By maintaining a split between 8-10 Fresh Original Visual Assets (including premium localized festival creative series and specialized theme cycles) and 10-12 Smart Recycled Frameworks optimized from legacy pools, we achieve a near-daily touchpoint profile without overstraining output limits.
+                </p>
+
+                <!-- Simulated Content Distribution Chart -->
+                <div class="badge-pill" style="margin-bottom:10px;">6月新号发布排期工业化推进表示 / Daily Output Mapping</div>
+                <div class="calendar-strip">
+                    <div class="calendar-day-node post-fresh"><span class="day-lbl">周一 / Mon</span><br><span class="day-act" style="color:var(--neon-orange);">全新首发 (FRESH)</span></div>
+                    <div class="calendar-day-node post-recycled"><span class="day-lbl">周二 / Tue</span><br><span class="day-act" style="color:var(--electric-blue);">爆款重制 (RECYCLE)</span></div>
+                    <div class="calendar-day-node"><span class="day-lbl">周三 / Wed</span><br><span class="day-act">日常故事 (STORIES)</span></div>
+                    <div class="calendar-day-node post-fresh"><span class="day-lbl">周四 / Thu</span><br><span class="day-act" style="color:var(--neon-orange);">全新首发 (FRESH)</span></div>
+                    <div class="calendar-day-node post-recycled"><span class="day-lbl">周五 / Fri</span><br><span class="day-act" style="color:var(--electric-blue);">爆款重制 (RECYCLE)</span></div>
+                    <div class="calendar-day-node post-fresh"><span class="day-lbl">周六 / Sat</span><br><span class="day-act" style="color:var(--neon-orange);">高级短剧 (REELS)</span></div>
+                    <div class="calendar-day-node"><span class="day-lbl">周日 / Sun</span><br><span class="day-act">深度互动 (INTERACT)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 7: HEADSTART PLAN WITH 9:16 PHONE MOCKUPS -->
+        <div class="mega-title">06 // “Headstart”爆款系列闪击破圈推流行动 <span class="title-en-sub">The Headstart Campaign &amp; Funnel Optimization</span></div>
+        <div class="bento-layout">
+            <div class="creative-card span-12">
+                <span class="section-tag">Paid Acceleration Tunnel</span>
+                <h2>短视频引流两步走战略：历史数据与资本化推流 <span class="title-en-sub">The Headstart Multi-Stage Funnel</span></h2>
+                <p class="lang-block-zh" style="font-size:16px; line-height:1.6; margin-bottom:12px;">
+                    数据证明优质创意在预算护航下能够实现指数级裂变。上个周期团队使用相同创意概念进行小微跑通测试，仅投入小微的 **₹500 卢比 (约 ¥35 人民币)** 慢推，便快速斩获了 **162 名高黏性留存粉丝**（详见 4.png 历史存档快照）。
+                    <br>本次重启计划，我们将于新主页上线 2-3 天内直发第一部爆款短剧 <strong>Headstart Series Part 1 (s1.jpeg)</strong>，并在发布瞬间注入 **固定强推额度 ₹2,000 卢比 (约 ¥142 人民币)** 进行重度算法推流，强制突破系统初始流量壁垒，锁定至少 **600 名净值新粉丝**与 **100,000+ 次超饱和曝光量**。
+                </p>
+                <p class="lang-block-en" style="color:var(--muted-gray); margin-bottom:25px;">
+                    Our historical pilot benchmark proves content quality scales exponentially with budget matching. Last month, we seeded a basic version of this concept with a minor ₹500 INR (~¥35 RMB) push, converting an instantaneous 162 highly-retained organic followers. For our launch, we are deploying an aggressive ₹2,000 INR (~¥142 RMB) scaling boost behind Part 1 to pierce regional algorithm limitations and guarantee a baseline of 600+ new verified followers and a top-funnel 100,000+ brand views.
+                </p>
+
+                <!-- 9:16 VERTICAL REELS SHOWCASE WINDOWS -->
+                <div class="reels-9-16-container">
+                    <div class="smartphone-wrap-9-16">
+                        <div class="smartphone-glare-overlay"></div>
+                        <img src="s1.jpeg" alt="Headstart Series Part 1 Video Asset - s1.jpeg">
+                        <div class="smartphone-label-overlay">
+                            <div class="label-main">创意首发 / s1.jpeg (Part 1)</div>
+                            <div class="label-metrics">新页上线 2-3 天直发 | 目标: 600+ 净值新粉丝</div>
+                        </div>
+                    </div>
+                    <div class="smartphone-wrap-9-16">
+                        <div class="smartphone-glare-overlay"></div>
+                        <img src="s2.jpeg" alt="Headstart Series Part 2 Video Asset - s2.jpeg">
+                        <div class="smartphone-label-overlay">
+                            <div class="label-main">次周续作 / s2.jpeg (Part 2)</div>
+                            <div class="label-metrics">人群包再定向投放 | 强力锁死初始公域流量</div>
+                        </div>
+                    </div>
+                    <div class="smartphone-wrap-9-16">
+                        <div class="smartphone-glare-overlay"></div>
+                        <img src="4.png" alt="Historical Core Benchmark Metrics Source Image - 4.png">
+                        <div class="smartphone-label-overlay">
+                            <div class="label-main">历史实绩基准 / 4.png</div>
+                            <div class="label-metrics">旧主页高转化测试存档快照</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 8: LAST MONTH RESULT & EXISTING TABLE DATA -->
+        <div class="mega-title accent-mode">07 // 第一周期内容模型转化效能复盘 <span class="title-en-sub">Historic Conversion Intelligence Matrix</span></div>
+        <div class="bento-layout">
+            <div class="creative-card span-12">
+                <span class="section-tag">Audit Tracking Ledger</span>
+                <h2>测试期四大核心内容概念实绩复盘分析 <span class="title-en-sub">Cycle 1 Empirical Performance Metrics</span></h2>
+                <p class="lang-block-zh" style="font-size:16px; line-height:1.6; margin-bottom:15px;">
+                    在第一周期的矩阵跑通测试中，我们将内容细分为四大创意概念方向，每个方向均匹配了均等的测试推流预算（**约每支视频分配 ₹485 卢比 / 约合 ¥34.4 人民币**）。各创意大类及对应的真实单视频转化截图（1.png、2.png、3.png、4.png）与后台数据漏斗全量核算如下：
+                </p>
+                <p class="lang-block-en" style="color:var(--muted-gray); margin-bottom:25px;">
+                    During the initial matrix setup, we mapped creative deliverables into 4 distinct emotional content categories backed by an average boosting framework of approximately ₹485 INR (~¥34.4 RMB) per asset. Our real-world user conversion performance logged the following exact parameters:
+                </p>
+
+                <!-- THE 9:16 HISTORICAL STRATEGY CONCEPT CATEGORIES GALLERY -->
+                <div class="gallery-split-header">大类 A // 四大创意类别概念资产划分 (9:16 Core Creative Templates)</div>
+                <div class="reels-9-16-container" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-bottom:40px;">
+                    <div class="smartphone-wrap-9-16" style="border-radius:20px; border-width:5px;">
+                        <img src="emotional.png" alt="Emotional Creative Assets">
+                        <div class="smartphone-label-overlay" style="padding:15px 10px;"><div class="label-main" style="font-size:12px;">emotional.png (情绪共鸣)</div></div>
+                    </div>
+                    <div class="smartphone-wrap-9-16" style="border-radius:20px; border-width:5px;">
+                        <img src="interactive.png" alt="Interactive Creative Assets">
+                        <div class="smartphone-label-overlay" style="padding:15px 10px;"><div class="label-main" style="font-size:12px;">interactive.png (趣味互动)</div></div>
+                    </div>
+                    <div class="smartphone-wrap-9-16" style="border-radius:20px; border-width:5px;">
+                        <img src="informative.png" alt="Informative Creative Assets">
+                        <div class="smartphone-label-overlay" style="padding:15px 10px;"><div class="label-main" style="font-size:12px;">informative.png (科技科普)</div></div>
+                    </div>
+                    <div class="smartphone-wrap-9-16" style="border-radius:20px; border-width:5px;">
+                        <img src="series.png" alt="Series Video Creative Assets">
+                        <div class="smartphone-label-overlay" style="padding:15px 10px;"><div class="label-main" style="font-size:12px;">series.png (高级短剧)</div></div>
+                    </div>
+                </div>
+
+                <!-- THE 9:16 ANALYTICAL CONVERSION PERFORMANCE SCREENSHOTS GALLERY -->
+                <div class="gallery-split-header">大类 B // 真实后台对应转化截图数据 (9:16 Analytics Logs Intercept)</div>
+                <div class="reels-9-16-container" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-bottom:40px;">
+                    <div class="smartphone-wrap-9-16" style="border-radius:20px; border-width:5px;">
+                        <img src="1.png" alt="Video 1 Performance Graph Screenshot">
+                        <div class="smartphone-label-overlay" style="padding:15px 10px;"><div class="label-main" style="font-size:12px;">1.png (测试视频 1)</div></div>
+                    </div>
+                    <div class="smartphone-wrap-9-16" style="border-radius:20px; border-width:5px;">
+                        <img src="2.png" alt="Video 2 Performance Graph Screenshot">
+                        <div class="smartphone-label-overlay" style="padding:15px 10px;"><div class="label-main" style="font-size:12px;">2.png (测试视频 2)</div></div>
+                    </div>
+                    <div class="smartphone-wrap-9-16" style="border-radius:20px; border-width:5px;">
+                        <img src="3.png" alt="Video 3 Performance Graph Screenshot">
+                        <div class="smartphone-label-overlay" style="padding:15px 10px;"><div class="label-main" style="font-size:12px;">3.png (测试视频 3)</div></div>
+                    </div>
+                    <div class="smartphone-wrap-9-16" style="border-radius:20px; border-width:5px;">
+                        <img src="4.png" alt="Video 4 Performance Graph Screenshot">
+                        <div class="smartphone-label-overlay" style="padding:15px 10px;"><div class="label-main" style="font-size:12px;">4.png (测试视频 4)</div></div>
+                    </div>
+                </div>
+
+                <!-- UNTOUCHED AND MANDATORY STRATEGY LEDGER TABLE -->
+                <div class="badge-pill" style="margin-bottom:15px;">财务审计核心转化明细账目 / Verified Financial Ledger</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>创意架构大类测试节点 / Content Vector</th>
+                            <th>净增粉丝关注留存 / Followers</th>
+                            <th>单节点测试推流成本 (INR / RMB)</th>
+                            <th>单粉丝获取模型效能 (Cost/Follower)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>(Emo). Video 1 — 情感共鸣大类</td>
+                            <td>190</td>
+                            <td>₹485 <span style="color:#666; font-size:11px;">/ ¥34.4</span></td>
+                            <td>₹2.55 <span style="color:#666; font-size:11px;">/ ¥0.18</span></td>
+                        </tr>
+                        <tr>
+                            <td>(Int). Video 2 — 趣味互动大类</td>
+                            <td>216</td>
+                            <td>₹485 <span style="color:#666; font-size:11px;">/ ¥34.4</span></td>
+                            <td>₹2.24 <span style="color:#666; font-size:11px;">/ ¥0.16</span></td>
+                        </tr>
+                        <tr>
+                            <td>(Inf). Video 3 — 科技科普大类</td>
+                            <td>91</td>
+                            <td>₹485 <span style="color:#666; font-size:11px;">/ ¥34.4</span></td>
+                            <td>₹5.30 <span style="color:#666; font-size:11px;">/ ¥0.38</span></td>
+                        </tr>
+                        <tr>
+                            <td>(Se). Video 4 — 节日动态大类</td>
+                            <td>162</td>
+                            <td>₹485 <span style="color:#666; font-size:11px;">/ ¥34.4</span></td>
+                            <td>₹2.99 <span style="color:#666; font-size:11px;">/ ¥0.21</span></td>
+                        </tr>
+                        <tr style="background:rgba(255,85,0,0.1); font-weight:950; color:var(--neon-orange);">
+                            <td>综合核算总和 / 全盘转化均值</td>
+                            <td>659 留存净增粉丝</td>
+                            <td>累计实际开销 ₹1,940 <span style="color:var(--neon-orange); font-size:11px;">/ ¥137.2</span></td>
+                            <td>转化均值基准 ₹2.94 <span style="color:var(--neon-orange); font-size:11px;">/ ¥0.21</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- MACRO SCALING PROJECTIONS OVERLAY -->
+                <div style="margin-top:45px; padding:35px; background:rgba(0,0,0,0.03); border-radius:24px; border:3px dashed var(--cyber-dark);">
+                    <span class="badge-pill" style="background:var(--cyber-dark); color:var(--pure-white);">宏观破万级粉丝边际资本化路径预算推演 / Capital Scale Pool</span>
+                    <div style="font-size:52px; font-weight:950; color:var(--neon-orange); margin:15px 0; letter-spacing:-1.5px; animation: textGlowGlitch 4s infinite ease-in-out;">
+                        ₹30,000 <span style="font-size:22px; color:#333; font-weight:500;">INR</span> 
+                        <span style="color:#BBB; font-weight:300; margin: 0 10px;">|</span> 
+                        ¥2,121 <span style="font-size:22px; color:#333; font-weight:500;">RMB</span>
+                    </div>
+                    <p class="lang-block-zh" style="font-size:16px; line-height:1.6; font-weight:700;">
+                        高层战略决策窗口：依托第一周期精确跑通的单粉丝平均获取获客成本数据（精细化核算均值为 ₹2.94），若要长线推流并彻底稳固攻占新主页 <strong>10,000 名高价值留存粉丝</strong>的里程碑红线，全盘需要向算法卡池申请配置 **¥2,121 人民币 (₹30,000 卢比)** 的总体战略推流预算。这一成熟的资本化模型支持高度灵活的执行排期，管理层可根据局部市场宏观策略，自由裁量决定是在 1个月内快节奏闪击强冲破圈，还是拉长平摊至 2个月、3个月或6个月内逐步承接沉淀。
+                    </p>
+                    <p class="lang-block-en" style="color:var(--muted-gray); margin-top:8px;">
+                        Based on our data-validated acquisition foundation of ₹2.94 Avg Cost Base per follow, scaling directly to the 10,000 follower threshold demands a complete macro budget pool of ₹30,000 INR (~¥2,121 RMB). This allocation gives management immediate choice to hit our target in an intense 1-month push, or space it out over a 2, 3, or 6-month timeline depending on active corporate growth curves.
+                    </p>
+                </div>
+            </div>
+        </div>
+<!-- STEP 08 : FUTURE OPERATIONAL REQUIREMENTS -->
+<div class="mega-title accent-mode">
+    08 // 后续运营预算规划
+    <span class="title-en-sub">Future Operational Requirements</span>
+</div>
+
+<div class="bento-layout">
+
+    <!-- HERO BUDGET CARD -->
+    <div class="creative-card span-12" style="border-left:6px solid var(--neon-orange); overflow:hidden;">
+
+        <span class="section-tag">Budget Planning</span>
+
+        <h2 style="margin-bottom:15px;">
+            后续运营预算与互动激励规划
+            <span class="title-en-sub">
+                Additional Operational Investment Overview
+            </span>
+        </h2>
+
+        <p class="lang-block-zh" style="font-size:16px;line-height:1.7;">
+            随着新主页进入稳定增长阶段，为进一步提升品牌可信度、官方身份认证以及用户互动率，后续运营可能涉及以下额外投入。这些费用均属于可选运营预算，并不包含在前述广告投放预算之内。
+        </p>
+
+        <p class="lang-block-en" style="margin-top:10px;color:var(--muted-gray);">
+            As the new account enters its growth phase, several supplementary investments may be required to strengthen account credibility, improve engagement and maximize campaign performance. These expenses are optional operational costs and are separate from the advertising budget presented earlier.
+        </p>
+
+        <br>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Operational Requirement</th>
+                    <th>Monthly</th>
+                    <th>3 Months</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>
+                        🛡️ COOCAA Meta Verified Badge
+                    </td>
+
+                    <td>
+                        ₹639
+                        <br>
+                        <span style="font-size:11px;color:#666;">
+                            ¥45.98 RMB
+                        </span>
+                    </td>
+
+                    <td>
+                        ₹1,917
+                        <br>
+                        <span style="font-size:11px;color:#666;">
+                            ¥137.94 RMB
+                        </span>
+                    </td>
+
+                    <td>
+                        Official verification, stronger account protection and higher brand trust.
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td>
+                        🎁 Monthly User Interaction Giveaway
+                    </td>
+
+                    <td>
+                        6 Coupons
+                    </td>
+
+                    <td>
+                        18 Coupons
+                    </td>
+
+                    <td>
+                        Six winners will receive one coupon every month to encourage engagement and community participation.
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        🎟️ Coupon Budget
+                    </td>
+
+                    <td>
+                        ₹4,794
+                        <br>
+                        <span style="font-size:11px;color:#666;">
+                            ¥344.94 RMB
+                        </span>
+                    </td>
+
+                    <td>
+                        ₹14,382
+                        <br>
+                        <span style="font-size:11px;color:#666;">
+                            ¥1,034.81 RMB
+                        </span>
+                    </td>
+
+                    <td>
+                        Average coupon value:
+                        <strong>₹799 (¥57.49 RMB)</strong> each × 18 coupons.
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+    <!-- MONTHLY PLAN -->
+    <div class="creative-card span-12"
+        style="
+            background:linear-gradient(135deg,#070709 0%,#18181d 100%);
+            color:white;
+            border:4px solid var(--neon-orange);
+            box-shadow:0 25px 60px rgba(255,85,0,.18);
+        ">
+
+        <span class="section-tag" style="color:var(--electric-blue);">
+            Campaign Roadmap
+        </span>
+
+        <h2 style="color:white;">
+            第一阶段预算执行计划
+            <span class="title-en-sub"
+                style="background:var(--neon-orange);">
+                Phase 1 Budget Breakdown
+            </span>
+        </h2>
+
+        <table style="margin-top:30px;">
+
+            <thead>
+
+                <tr>
+
+                    <th>Campaign Period</th>
+
+                    <th>Allocated Budget</th>
+
+                    <th>Coupon Quantity</th>
+
+                    <th>Target Expected Outcome</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        25 Jun – 31 Jul
+                    </td>
+
+                    <td style="color:var(--neon-orange);font-size:20px;font-weight:900;">
+                        ₹10,000
+                    </td>
+
+                    <td style="font-size:18px;font-weight:900;">
+                        6 Coupons
+                    </td>
+
+                    <td style="color:var(--electric-blue);font-weight:900;">
+                        2,500 – 3,500 Followers
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        <div class="stat-massive-grid" style="margin-top:35px;">
+
+            <div class="metric-big-box orange-flavor">
+
+                <div class="num-callout">
+                    ₹10K
+                </div>
+
+                <span class="num-lbl-zh">
+                    第一阶段运营预算
+                </span>
+
+                <span class="num-lbl-en">
+                    PHASE 1 BUDGET
+                </span>
+
+            </div>
+
+            <div class="metric-big-box"
+                style="border-left-color:var(--electric-blue);">
+
+                <div class="num-callout"
+                    style="color:var(--electric-blue);">
+
+                    2.5K–3.5K
+
+                </div>
+
+                <span class="num-lbl-zh">
+                    预计新增粉丝
+                </span>
+
+                <span class="num-lbl-en">
+                    EXPECTED FOLLOWERS
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+        <!-- PHILOSOPHICAL TRADITIONAL CLOSING QUOTE -->
+        <footer class="philosophical-footer">
+            <div class="quote-zh">“凡益之道，与时偕行。旧章既坠，新篇更丽。”</div>
+            <div class="quote-en">"The end of an era is merely the dawn of something far greater and more resilient."</div>
+            <div class="sys-info">Data Assets Reference Mapping Matrix: 1000150977.jpg // 1000150978.jpg // 1000150992.png</div>
+        </footer>
+    </div>
+
+</body>
+</html>
